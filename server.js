@@ -1,10 +1,11 @@
 const express= require('express')
 const fs= require('fs')
-const path= require('path')
+const path= require('path');
+const { env } = require('process');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express()
-const port = 3000
+const port = env.process.PORT || 3000
 const dbPath= path.join(__dirname,'db','db.json')
 
 app.use(express.json())

@@ -1,11 +1,12 @@
 const express= require('express')
+const dotenv= require('dotenv')
 const fs= require('fs')
 const path= require('path');
-const { env } = require('process');
-const { v4: uuidv4 } = require('uuid');
 
+const { v4: uuidv4 } = require('uuid');
+dotenv.config()
 const app = express()
-const port = env.process.PORT || 3000
+const port = process.env.PORT|| 3000
 const dbPath= path.join(__dirname,'db','db.json')
 
 app.use(express.json())
